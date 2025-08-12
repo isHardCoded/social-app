@@ -1,0 +1,15 @@
+.post {
+	display: flex;
+	padding: 20px;
+	align-items: start;
+	background-color: white;
+	gap: 15px;
+
+	border-radius: 10px;
+
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+}
