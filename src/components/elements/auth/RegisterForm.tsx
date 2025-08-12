@@ -6,12 +6,14 @@ export const RegisterForm = () => {
 	const [username, setUsername] = useState('')
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
+
 	const navigate = useNavigate()
 
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault()
 		try {
-			await registerApi(username, email, password)
+			const data = await registerApi(username, email, password)
+			console.log(`Пользователь успешно зарегистрировался: ${data.username}`)
 			navigate('/login')
 		} catch (err) {
 			alert('Ошибка регистрации')

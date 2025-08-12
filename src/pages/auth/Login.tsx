@@ -1,4 +1,4 @@
-import { LoginForm } from '../../components/elements/auth/LoginForm'
+import LoginForm from '../../components/elements/auth/LoginForm'
 
 const Login = () => <LoginForm />
 

@@ -4,13 +4,16 @@ import styles from './Header.module.css'
 import Logo from '../../../assets/images/logo.svg'
 import Avatar from '../../../assets/images/avatar.svg'
 import { FaSearch } from 'react-icons/fa'
-import { IoIosSettings } from 'react-icons/io'
-import { IoIosNotifications } from 'react-icons/io'
 
-const Header = () => {
-	const [count, setCount] = React.useState(0)
+import { FiLogOut } from 'react-icons/fi'
+import { useAuth } from '../../../hooks/useAuth'
 
-	console.log(count)
+interface HeaderProps {
+	username: string | undefined
+}
+
+const Header: React.FC<HeaderProps> = ({ username }) => {
+	const { logout } = useAuth()
 
 	return (
 		<header className={styles.header}>
@@ -24,15 +27,12 @@ const Header = () => {
 					<img src={Avatar} alt='' />
 					<div>
 						<p style={{ fontSize: 16, fontWeight: 'bold' }}>Steve Rogers</p>
-						<p style={{ fontSize: 12 }}>@steve_rogers</p>
+						<p style={{ fontSize: 12 }}>@{username}</p>
 					</div>
 				</div>
 				<div className={styles.buttons}>
-					<button onClick={() => setCount(count + 1)}>
-						<IoIosSettings size={26} />
-					</button>
-					<button>
-						<IoIosNotifications size={26} />
+					<button onClick={logout}>
+						<FiLogOut size={26} />
 					</button>
 				</div>
 			</div>
