@@ -5,7 +5,6 @@ import { POST_SERVICE } from '../services/PostService'
 type UsePostReturn = {
 	posts: Post[]
 	setPosts: React.Dispatch<React.SetStateAction<Post[]>>
-	getPosts: () => Promise<void>
 }
 
 export const usePost = (): UsePostReturn => {
@@ -15,9 +14,12 @@ export const usePost = (): UsePostReturn => {
 		setPosts(await POST_SERVICE.getPosts())
 	}
 
+	React.useEffect(() => {
+		getPosts()
+	}, [])
+
 	return {
 		posts,
 		setPosts,
-		getPosts,
 	}
 }
