@@ -11,6 +11,7 @@ const HomePage = () => {
 			<div>
 				<h2>Не авторизован</h2>
 				<Link to={{ pathname: '/login' }}>Войти</Link>
+				<p>123</p>
 			</div>
 		)
 	}
