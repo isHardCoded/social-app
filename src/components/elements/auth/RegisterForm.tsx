@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { register as registerApi } from '../../../services/api'
+import { AUTH_SERVICE } from '../../../services/UserService'
 import { useNavigate } from 'react-router-dom'
 
 export const RegisterForm = () => {
@@ -12,7 +12,7 @@ export const RegisterForm = () => {
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault()
 		try {
-			const data = await registerApi(username, email, password)
+			const data = await AUTH_SERVICE.register(username, email, password)
 			console.log(`Пользователь успешно зарегистрировался: ${data.username}`)
 			navigate('/login')
 		} catch (err) {

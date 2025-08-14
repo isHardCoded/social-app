@@ -1,4 +1,5 @@
 import { createContext, useState, type ReactNode } from 'react'
+import type { User } from '../models/User'
 
 import React from 'react'
 

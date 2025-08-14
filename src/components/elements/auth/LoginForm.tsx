@@ -1,5 +1,5 @@
 import React from 'react'
-import { login as loginApi } from '../../../services/api'
+import { AUTH_SERVICE } from '../../../services/UserService'
 import { useAuth } from '../../../hooks/useAuth'
 import { useNavigate } from 'react-router-dom'
 
@@ -14,7 +14,7 @@ const LoginForm = () => {
 		e.preventDefault()
 
 		try {
-			const data = await loginApi(username, password)
+			const data = await AUTH_SERVICE.login(username, password)
 			login(data.user, data.access)
 			navigate('/')
 		} catch (err) {
