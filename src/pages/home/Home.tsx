@@ -10,7 +10,7 @@ const HomePage = () => {
 	if (!user) {
 		return (
 			<div>
-				<h2>Не авторизован</h2>
+				<h2>123</h2>
 				<Link to={{ pathname: '/login' }}>Войти</Link>
 			</div>
 		)
