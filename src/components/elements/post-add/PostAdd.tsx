@@ -17,8 +17,6 @@ const PostAdd = () => {
 		} catch (err) {
 			alert(`Ошибка при создании задачи: ${err}`)
 		}
-
-		reload()
 	}
 
 	return (
@@ -32,7 +30,7 @@ const PostAdd = () => {
 					placeholder='Введите текст поста...'
 				/>
 			</div>
-			<button>Добавить пост</button>
+			<button onClick={reload}>Добавить пост</button>
 		</form>
 	)
 }

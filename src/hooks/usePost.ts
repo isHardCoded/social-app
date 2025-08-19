@@ -24,7 +24,7 @@ export const usePost = (): UsePostReturn => {
 
 	const addPost = async (content: string, token: string | null) => {
 		const newPost = await POST_SERVICE.addPost(content, token)
-		setPosts(prev => [newPost, ...prev])
+		setPosts(prev => [...prev, newPost])
 	}
 
 	const updatePost = async (
