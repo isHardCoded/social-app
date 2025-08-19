@@ -6,7 +6,7 @@ import { useAuth } from '../../../hooks/useAuth'
 const PostAdd = () => {
 	const [content, setContent] = React.useState('')
 
-	const { addPost } = usePost()
+	const { addPost, reload } = usePost()
 	const { token } = useAuth()
 
 	const handleSubmit = async (e: React.FormEvent) => {
@@ -17,6 +17,8 @@ const PostAdd = () => {
 		} catch (err) {
 			alert(`Ошибка при создании задачи: ${err}`)
 		}
+
+		reload()
 	}
 
 	return (

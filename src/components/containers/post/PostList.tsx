@@ -3,13 +3,13 @@ import Post from '../../elements/post/Post'
 import styles from './PostList.module.css'
 
 const PostList = () => {
-	const { posts } = usePost()
+	const { posts, reload } = usePost()
 
 	return (
 		<ul className={styles.list}>
 			{posts.map(post => (
 				<li>
-					<Post {...post} />
+					<Post onPostAction={reload} {...post} />
 				</li>
 			))}
 		</ul>
